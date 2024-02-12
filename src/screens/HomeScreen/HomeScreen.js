@@ -1,25 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import axios from 'axios'
+import useHome from './useHome'
 
 const HomeScreen = () => {
-  const [data, setData] = React.useState();
-
-  const loadItems = () => {
-    axios
-      .get("https://api.thedogapi.com/v1/breeds?limit=10&page=0")
-      .then(({data}) => setData(data))
-      .catch((err) => console.log(err));
-  }
-
-  React.useEffect(() => {
-    loadItems();
-  }, [])
+  const {data, onListItemPress} = useHome();
 
   return (
     <View style={styles.container}>
       {
-        data?.map((item) => <Text style={styles.listItemText}>{item.name}</Text>)
+        data?.map((item) => <Text key={item.id} style={styles.listItemText} onPress={() => onListItemPress(item)}>{item.name}</Text>)
       }
     </View>
   )
