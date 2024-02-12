@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "test_23_separation_of_concern",
+    "slug": "test_23_separation_of_concern",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "test_23_separation_of_concern"
+}
