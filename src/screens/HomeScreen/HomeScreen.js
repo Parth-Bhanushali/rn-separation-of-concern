@@ -2,8 +2,8 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import useHome from './useHome'
 
-const HomeScreen = () => {
-  const {data, onListItemPress} = useHome();
+const HomeScreen = (props) => {
+  const {data, onListItemPress} = useHome(props);
 
   return (
     <View style={styles.container}>

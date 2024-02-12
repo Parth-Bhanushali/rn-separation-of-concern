@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 
-const useHome = () => {
+const useHome = (props) => {
   const [data, setData] = React.useState();
 
   const loadItems = () => {
@@ -13,6 +13,8 @@ const useHome = () => {
 
   const onListItemPress = (item) => {
     console.log('List item: ' + item.name + ' has been pressed.')
+    
+    props.navigation.navigate('Two', {item})
   }
 
   React.useEffect(() => {
